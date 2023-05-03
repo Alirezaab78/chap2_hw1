@@ -2,6 +2,10 @@ import cv2
 import numpy as np 
 import time
 
+## programmer : Alireza Abolqasemi
+
+user_name = input("please enter your name : \n")
+
 t0 = time.time()
 
 cap = cv2.VideoCapture(0)
@@ -25,9 +29,9 @@ while True :
         frame = cv2.flip(frame, 1)
         
         t1_str =str(t1)
-        name_str = "Alireza\r"
-        name_time = name_str + t1_str
-        cv2.putText(frame, name_time, (100, 100), cv2.FONT_HERSHEY_PLAIN,
+        name_and_time = user_name+ "\n" + t1_str
+        
+        cv2.putText(frame, name_and_time, (100, 100), cv2.FONT_HERSHEY_PLAIN,
                     5, (0, 0, 0), 5) 
 
         #BGR
